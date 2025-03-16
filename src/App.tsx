@@ -1,4 +1,3 @@
-import { createContext, useContext, } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./assets/Navbar";
 import Login from "./assets/Login";
@@ -8,28 +7,6 @@ import Settings from "./assets/Settings";
 import ProtectedRoute from "./assets/ProtectedRoute";
 import './App.css'
 import { AuthProvider } from "./assets/AuthContext";
-
-
-
-
-type Role = "Admin" | "Editor" | "Viewer" | null;
-
-interface User {
-  username: string;
-  role: Role;
-}
-
-interface AuthContextType {
-  user: User | null;
-  login: (username: string, role: Role) => void;
-  logout: () => void;
-}
-
-const AuthContext = createContext<AuthContextType | null>(null);
-
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const useAuth = () => useContext(AuthContext) as AuthContextType;
 
 function App() {
   return (
