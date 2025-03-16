@@ -28,6 +28,7 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | null>(null);
 
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const useAuth = () => useContext(AuthContext) as AuthContextType;
 
 function App() {
